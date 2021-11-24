@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include<string>
-using namespace std;
+//using namespace std;
 
 template <class T>
 class TStack
@@ -90,7 +90,7 @@ public:
 			throw "Stack is empty";
 		return mas[pos];
 	};
-	void Clear()
+	void Clear() 	//посмотреть элемент с вершины стэка
 	{
 		pos = -1;
 	};
@@ -100,8 +100,7 @@ public:
 			out << v.mas[i] << ' ';
 		return out;
 	}
-	//метод top посмотреть элемент с вершины стэка
-// метод очистить стэк clear(), pos=-1;
+
 	// скобки, кол-во открывающих = кол-ву закрывающих
 	// просматриваем выражение, если "(" - кладём в стек, если видим ")" - убираем из стека
 };
