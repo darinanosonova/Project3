@@ -79,7 +79,8 @@ bool TCalc::check_expr() {
 		if (expr[i] == '(') {
 			st_char.push(expr[i]);
 		}
-		else if (expr[i] == ')') {
+		else if (expr[i] == ')')
+		{
 			if (st_char.empty()) {
 				return false;
 			}
@@ -89,7 +90,8 @@ bool TCalc::check_expr() {
 		}
 	}
 	return st_char.empty();
-}
+};
+
 // перевод в постфиксную запись 
 void TCalc::convert_to_postfix() {
 	
@@ -106,8 +108,8 @@ void TCalc::convert_to_postfix() {
 			ostringstream ss;
 			ss << tmp;
 
-			pstfix += ss.str();
-			pstfix += " ";
+			pstfix = pstfix + ss.str();
+			pstfix = pstfix + " ";
 			i += idx - 1;
 		}
 		else if (infix[i] == '(')
@@ -155,7 +157,7 @@ double TCalc::calc() {
 			size_t idx;
 			double tmp = stod(&infix[i], &idx);
 			st_d.push(tmp);
-			i += idx - 1;
+			i = i + idx - 1;
 		}
 		else if ((infix[i] == '+') || (infix[i] == '-') || (infix[i] == '*') || (infix[i] == '/') || (infix[i] == '^'))
 		{
